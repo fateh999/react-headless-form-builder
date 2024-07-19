@@ -1,0 +1,30 @@
+{
+  "name": "react-headless-form-builder",
+  "version": "1.0.0",
+  "description": "A headless form builder library for React frameworks and React Native",
+  "files": [
+    "dist"
+  ],
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "keywords": [
+    "Form",
+    "Builder",
+    "React",
+    "React",
+    "Native",
+    "Next.JS",
+    "GatsbyJS",
+    "Remix"
+  ],
+  "author": "Fateh Farooqui",
+  "license": "MIT",
+  "peerDependencies": {
+    "@types/react": "*",
+    "react": "*",
+    "typescript": "*"
+  }
+}
