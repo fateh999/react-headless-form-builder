@@ -6,6 +6,8 @@ import {
   FormItemBase,
   FormItemWithRender,
   InnerFormItem,
+  FormInputItem,
+  FormInputItemProps,
 } from './types';
 
 export {
@@ -16,4 +18,6 @@ export {
   FormItemBase,
   FormItemWithRender,
   InnerFormItem,
+  FormInputItem,
+  FormInputItemProps,
 };

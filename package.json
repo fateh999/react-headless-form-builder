@@ -1,6 +1,6 @@
 {
   "name": "react-headless-form-builder",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A headless form builder library for React frameworks and React Native",
   "files": [
     "dist"
