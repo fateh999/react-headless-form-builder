@@ -1,4 +1,4 @@
-import {ReactNode, useState} from 'react';
+import {ReactNode} from 'react';
 import {
   FormInputItemProps,
   FormInputs,
@@ -15,7 +15,7 @@ import {
   RadioButton,
   Checkbox,
 } from 'react-native-paper';
-import DropDown, {DropDownPropsInterface} from 'react-native-paper-dropdown';
+import {Dropdown, DropdownProps} from 'react-native-paper-dropdown';
 
 const FormTextInput = ({name, props, nextFormItemName}: FormInputItemProps) => {
   const {control, setFocus} = useFormContext();
@@ -150,8 +150,7 @@ const FormCheckboxInput = ({name, props}: FormInputItemProps) => {
 
 const FormSelectInput = ({name, props}: FormInputItemProps) => {
   const {control} = useFormContext();
-  const {label, list} = props as DropDownPropsInterface;
-  const [showDropDown, setShowDropDown] = useState(false);
+  const {label, options} = props as DropdownProps;
 
   return (
     <Controller
@@ -162,21 +161,11 @@ const FormSelectInput = ({name, props}: FormInputItemProps) => {
 
         return (
           <>
-            <DropDown
+            <Dropdown
               label={label}
-              visible={showDropDown}
-              showDropDown={() => setShowDropDown(true)}
-              onDismiss={() => setShowDropDown(false)}
               value={field.value}
-              setValue={field.onChange}
-              list={list}
-              inputProps={{
-                right: (
-                  <TextInput.Icon
-                    icon={showDropDown ? 'menu-up' : 'menu-down'}
-                  />
-                ),
-              }}
+              onSelect={field.onChange}
+              options={options}
             />
             {!!message && <HelperText type={'error'}>{message}</HelperText>}
           </>

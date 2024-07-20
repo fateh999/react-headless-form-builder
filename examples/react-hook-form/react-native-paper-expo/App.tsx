@@ -15,7 +15,7 @@ import {zodResolver} from '@hookform/resolvers/zod';
 import {z} from 'zod';
 import FormBuilderProvider from './form-builder-provider';
 import {useCallback, useMemo} from 'react';
-import {DropDownPropsInterface} from 'react-native-paper-dropdown';
+import {DropdownProps} from 'react-native-paper-dropdown';
 
 const SignupFormSchema = z.object({
   name: z.string().min(1, {message: 'Name is required'}),
@@ -92,12 +92,12 @@ function App() {
         name: 'role',
         type: 'select',
         props: {
-          list: [
+          options: [
             {value: 'user', label: 'User'},
             {value: 'admin', label: 'Admin'},
           ],
           label: 'Role',
-        } as DropDownPropsInterface,
+        } as DropdownProps,
       },
       {
         name: 'acceptTerms',
